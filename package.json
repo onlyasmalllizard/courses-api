@@ -2,7 +2,10 @@
   "name": "osc-tech-test",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./dist/index.js",
     "test": "jest"
   },
   "author": "Lizard Morrow",
@@ -15,5 +18,12 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.11.2",
+    "graphql": "^16.9.0",
+    "graphql-scalars": "^1.23.0",
+    "reflect-metadata": "^0.2.2",
+    "type-graphql": "^2.0.0-rc.2"
   }
 }
