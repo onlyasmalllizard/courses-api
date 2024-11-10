@@ -1,7 +1,14 @@
 import {Course} from "../types";
 import {db} from "../../../lib/db";
+import {logger} from "../../../lib/logger";
+
+const log = logger.child({
+    service: 'getCoursesFromDbService'
+});
 
 export async function getCoursesFromDbService(): Promise<Course[]> {
+    log.info('getCoursesFromDbService - INIT');
+
     const selectColumns = [
         'id',
         'title',
@@ -10,6 +17,10 @@ export async function getCoursesFromDbService(): Promise<Course[]> {
         'outcome'
     ];
 
-    return db.select(selectColumns)
+    const result = await db.select(selectColumns)
         .from('courses');
+
+    log.info('getCoursesFromDbService - END');
+
+    return result;
 }
