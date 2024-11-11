@@ -8,6 +8,6 @@ export const db = knex({
         port: parseInt(process.env.PORT as string),
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
-        database: 'osc',
+        database: process.env.DATABASE,
     },
 });
