@@ -1,4 +1,4 @@
-import {ArgsType, Field, Int, ObjectType} from "type-graphql";
+import {Field, Int, ObjectType} from "type-graphql";
 
 @ObjectType()
 export class Course {
@@ -16,4 +16,10 @@ export class Course {
 
     @Field(() => String, { nullable: true })
     outcome: string;
+}
+
+@ObjectType()
+export class DeleteCourseResponse {
+    @Field(() => Int)
+    id: number;
 }
