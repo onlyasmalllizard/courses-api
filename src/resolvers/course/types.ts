@@ -1,4 +1,4 @@
-import {Field, Int, ObjectType} from "type-graphql";
+import {ArgsType, Field, Int, ObjectType} from "type-graphql";
 
 @ObjectType()
 export class Course {

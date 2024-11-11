@@ -1,4 +1,5 @@
-import {Field, InputType} from "type-graphql";
+import {ArgsType, Field, InputType, Int} from "type-graphql";
+import {SortOrder} from "../../utils/enums/sort-order";
 
 @InputType()
 export class AddCourseRequest {
@@ -13,4 +14,16 @@ export class AddCourseRequest {
 
     @Field(() => String, { nullable: true })
     outcome: string;
+}
+
+@ArgsType()
+export class GetCoursesRequest {
+    @Field(() => Int, { nullable: true })
+    limit?: number;
+
+    @Field(() => Int, { nullable: true })
+    offset?: number;
+
+    @Field(() => String, { nullable: true })
+    sortOrder?: SortOrder
 }
