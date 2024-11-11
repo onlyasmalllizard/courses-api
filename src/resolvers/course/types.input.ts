@@ -16,6 +16,24 @@ export class AddCourseRequest {
     outcome: string;
 }
 
+@InputType()
+export class UpdateCourseRequest {
+    @Field(() => Int)
+    id: number;
+
+    @Field(() => String, { nullable: true })
+    title?: string;
+
+    @Field(() => String, { nullable: true })
+    description?: string;
+
+    @Field(() => String, { nullable: true })
+    duration?: string;
+
+    @Field(() => String, { nullable: true })
+    outcome?: string;
+}
+
 @ArgsType()
 export class GetCoursesRequest {
     @Field(() => Int, { nullable: true })
