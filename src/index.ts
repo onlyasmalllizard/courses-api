@@ -1,9 +1,8 @@
+import "reflect-metadata";
 import {buildSchema} from "type-graphql";
 import {CourseResolver} from "./resolvers/course/course.resolver";
 import {ApolloServer} from "@apollo/server";
 import {startStandaloneServer} from "@apollo/server/standalone";
-import "reflect-metadata";
-import "dotenv/config";
 
 async function bootstrap() {
     const schema = await buildSchema({

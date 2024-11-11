@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "rootDirs": ["src"],
+    "rootDir": "src",
     "outDir": "dist",
+    "target": "es2022",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "es2022",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "lib": ["es2020"],
-    "target": "es2020",
+    "lib": ["es2022"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "types": ["node"]
+    "types": ["node"],
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "baseUrl": "./"
   },
   "include": ["src/**/*"]
 }
