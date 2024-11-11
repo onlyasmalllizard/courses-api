@@ -1,23 +1,22 @@
-import {logger} from "../../../lib/logger";
-import {db} from "../../../lib/db";
+import {logger} from "src/lib/logger";
 import {AddCourseRequest} from "../types.input";
-import {selectLastInsertIdService} from "../../../utils/helpers/select-last-insert-id-service";
+import {selectLastInsertIdService} from "src/utils/helpers/select-last-insert-id-service";
+import {insertCourseIntoDb} from "./insert-course-into-db";
+import {addCourseToCollection} from "./add-course-to-collection";
 
 const log = logger.child({
     service: 'addCourseService'
 });
 
-export async function addCourseService(course: AddCourseRequest): Promise<number> {
+export async function addCourseService(course: AddCourseRequest, collectionId: number): Promise<number> {
     log.info('addCourseService - INIT');
 
-    await db('courses')
-        .insert({ ...course, active: true })
-        .onConflict()
-        .merge();
+    await insertCourseIntoDb(course);
 
-    // const id = await db.fromRaw('select last_insert_id()');
+    const courseId = await selectLastInsertIdService();
+    await addCourseToCollection(courseId, collectionId);
 
     log.info('addCourseService - END');
 
-    return selectLastInsertIdService();
+    return courseId;
 }

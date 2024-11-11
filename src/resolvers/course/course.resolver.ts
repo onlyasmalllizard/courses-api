@@ -22,8 +22,11 @@ export class CourseResolver {
     }
 
     @Mutation(() => Course)
-    async addCourse(@Arg('course') course: AddCourseRequest): Promise<Course> {
-        const result = await addCourseService(course);
+    async addCourse(
+        @Arg('course') course: AddCourseRequest,
+        @Arg('collectionId') collectionId: number
+    ): Promise<Course> {
+        const result = await addCourseService(course, collectionId);
 
         return {
             id: result,
