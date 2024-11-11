@@ -1,8 +1,8 @@
-import {Course} from "../types";
 import {db} from "../../../lib/db";
 import {logger} from "../../../lib/logger";
 import {selectColumns} from "../common/select-columns";
 import {SortOrder} from "../../../utils/enums/sort-order";
+import {Course} from "../types";
 
 const log = logger.child({
     service: 'getCoursesFromDbService'

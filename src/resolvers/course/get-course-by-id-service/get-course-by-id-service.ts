@@ -1,7 +1,7 @@
-import {Course} from "../types";
 import {db} from "../../../lib/db";
 import {logger} from "../../../lib/logger";
 import {selectColumns} from "../common/select-columns";
+import {Course} from "../types";
 
 const log = logger.child({
     service: 'getCourseByIdService'
