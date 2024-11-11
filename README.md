@@ -36,9 +36,9 @@ query getCourseById($courseId: Int!) {
 }
 ```
 
-| parameter | type   | description                      | required          |
-|-----------|--------|----------------------------------|-------------------|
-| courseId  | number | The id of the course to retrieve | :heavy_checkmark: |
+| parameter | type   | description                      | required           |
+|-----------|--------|----------------------------------|--------------------|
+| courseId  | number | The id of the course to retrieve | :heavy_check_mark: |
 
 #### addCourse
 ```
@@ -53,10 +53,10 @@ mutation addCourse($course: AddCourseRequest!, $collectionId: Int!) {
 }
 ```
 
-| parameter    | type                                                                                                                    | description                                        | required          |
-|--------------|-------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|-------------------|
-| course       | {<br/>&emsp;title: string;<br/>&emsp;description: string;<br/>&emsp;duration: string;<br />&emsp;outcome: string;<br/>} | The information about the course info to add       | :heavy_checkmark: |
-| collectionId | number                                                                                                                  | The id of the collection the new course belongs to | :heavy_checkmark: |
+| parameter    | type                                                                                                                    | description                                        | required           |
+|--------------|-------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|--------------------|
+| course       | {<br/>&emsp;title: string;<br/>&emsp;description: string;<br/>&emsp;duration: string;<br />&emsp;outcome: string;<br/>} | The information about the course info to add       | :heavy_check_mark: |
+| collectionId | number                                                      <br/>                                                       | The id of the collection the new course belongs to | :heavy_check_mark: |
 
 #### updateCourse
 ```
@@ -70,9 +70,9 @@ mutation Mutation($course: UpdateCourseRequest!) {
   }
 }
 ```
-| parameter           | type                                                                                                                                             | description                                                                               | required          |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|-------------------|
-| updateCourseRequest | {<br/>&emsp;id: number;</br>&emsp;title?: string;<br/>&emsp;description?: string;<br/>&emsp;duration?: string;<br/>&emsp;outcome?: string;<br/>} | The details of the course to update. Any fields that are not present will not be updated. | :heavy_checkmark: |
+| parameter           | type                                                                                                                                             | description                                                                               | required           |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|--------------------|
+| updateCourseRequest | {<br/>&emsp;id: number;</br>&emsp;title?: string;<br/>&emsp;description?: string;<br/>&emsp;duration?: string;<br/>&emsp;outcome?: string;<br/>} | The details of the course to update. Any fields that are not present will not be updated. | :heavy_check_mark: |
 
 #### deleteCourse
 ```
@@ -83,9 +83,9 @@ mutation deleteCourse($courseId: Int!) {
 }
 ```
 
-| parameter | type   | description                    | required          |
-|-----------|--------|--------------------------------|-------------------|
-| courseId  | number | The id of the course to delete | :heavy_checkmark: |
+| parameter | type   | description                    | required           |
+|-----------|--------|--------------------------------|--------------------|
+| courseId  | number | The id of the course to delete | :heavy_check_mark: |
 
 ### Collections
 #### getCollections
@@ -122,6 +122,6 @@ query getCollectionById($collectionId: Int!) {
 }
 ```
 
-| parameter    | type   | description                          | required          |
-|--------------|--------|--------------------------------------|-------------------|
-| collectionId | number | The id of the collection to retrieve | :heavy_checkmark: |
+| parameter    | type   | description                          | required           |
+|--------------|--------|--------------------------------------|--------------------|
+| collectionId | number | The id of the collection to retrieve | :heavy_check_mark: |
