@@ -17,7 +17,9 @@ async function bootstrap() {
 
     const server = new ApolloServer({ schema });
 
-    const { url } = await startStandaloneServer(server, { listen: { port: 4000 } });
+    const { url } = await startStandaloneServer(server, {
+        listen: { port: process.env.PORT as unknown as number ||  4000 }
+    });
     console.log(`GraphQL server ready at ${url}`);
 }
 
