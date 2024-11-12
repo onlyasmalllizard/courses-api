@@ -10,7 +10,8 @@ import {ApolloServerErrorCode} from "@apollo/server/errors";
 import {ApolloServerPluginCacheControl} from "@apollo/server/plugin/cacheControl";
 import { InMemoryLRUCache } from "@apollo/utils.keyvaluecache"
 import {logger} from "./lib/logger";
-import {Context, OSCContext} from "./apollo/context";
+import {Context} from "./apollo/context";
+import {OSCContext} from "./apollo/types";
 
 function getApolloServer() {
     const schema = buildSchemaSync({

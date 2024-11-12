@@ -1,6 +1,8 @@
 import knex from 'knex';
 import 'dotenv/config';
 
+// TODO: Delete once api has been configured to use the db passed through context
+
 export const db = knex({
     client: 'mysql2',
     connection: {

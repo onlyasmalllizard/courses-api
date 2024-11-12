@@ -1,11 +1,6 @@
 import {KeyValueCache} from "@apollo/utils.keyvaluecache";
 import {initSQLDataSources} from "../datasources/init-sql-datasources";
-import {OSCDataSources} from "./types";
-
-export interface OSCContext {
-    token: string;
-    dataSources: OSCDataSources;
-}
+import {OSCContext, OSCDataSources} from "./types";
 
 export class Context {
     private runtimeContext?: OSCDataSources;
