@@ -3,6 +3,7 @@ import {getApolloServer} from "src";
 import {checkResponseBody} from "test/check-test-responses";
 import {Collection, GetCollectionByIdResponse} from "src/resolvers/collection/types";
 import * as collectionsResponse from "test/_data/responses/collectionsResponse"
+import {loadDefaultData} from "../../_data/sql-defaults/load-default-data";
 
 const testServer = getApolloServer();
 
@@ -33,6 +34,8 @@ const COLLECTION_BY_ID_QUERY = `query GetCollectionById($collectionId: Int!) {
 
 describe("GetCollections", () => {
     test("it returns all collections", async () => {
+        await loadDefaultData();
+
         const response = await testServer.executeOperation({
             query: COLLECTIONS_QUERY
         });
@@ -47,6 +50,8 @@ describe("GetCollections", () => {
 
 describe("GetCollectionById", () => {
     test("it returns the collection and associated courses for the given id", async () => {
+        await loadDefaultData();
+
         const response = await testServer.executeOperation({
             query: COLLECTION_BY_ID_QUERY,
             variables: {
