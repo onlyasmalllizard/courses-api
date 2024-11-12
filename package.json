@@ -12,7 +12,7 @@
     "dev": "concurrently --kill-others \"npm run dev:build\" \"npm run dev:watch\"",
     "dev:build": "npx swc src -d dist --config-file .swcrc --watch",
     "dev:watch": "nodemon dist/src/index.js",
-    "test": "jest"
+    "test": "vitest"
   },
   "author": "Lizard Morrow",
   "license": "ISC",
@@ -22,12 +22,14 @@
     "@types/graphql-depth-limit": "^1.1.6",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.9.0",
+    "@vitest/coverage-v8": "^2.1.4",
     "concurrently": "^9.1.0",
-    "jest": "^29.7.0",
     "nodemon": "^3.1.7",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vite-tsconfig-paths": "^5.1.2",
+    "vitest": "^2.1.4"
   },
   "dependencies": {
     "@apollo/server": "^4.11.2",

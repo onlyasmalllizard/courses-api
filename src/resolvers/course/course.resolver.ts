@@ -23,7 +23,7 @@ export class CourseResolver {
 
     @Mutation(() => Course)
     async addCourse(
-        @Arg('course') course: AddCourseRequest,
+        @Arg('course', () => AddCourseRequest) course: AddCourseRequest,
         @Arg('collectionId', () => Int) collectionId: number
     ): Promise<Course> {
         const result = await addCourseService(course, collectionId);
@@ -35,7 +35,7 @@ export class CourseResolver {
     }
 
     @Mutation(() => Course)
-    async updateCourse(@Arg('course') course: UpdateCourseRequest): Promise<Course> {
+    async updateCourse(@Arg('course', () => UpdateCourseRequest) course: UpdateCourseRequest): Promise<Course> {
         return updateCourseService(course);
     }
 

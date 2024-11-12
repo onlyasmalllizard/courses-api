@@ -6,12 +6,12 @@ import {loginUserService} from "./login-user-service/login-user-service";
 @Resolver()
 export class UserResolver {
     @Query(() => UserLoginResponse)
-    async login(@Args() userLogin: UserLogin) {
+    async login(@Args(() => UserLogin) userLogin: UserLogin) {
         return loginUserService(userLogin);
     }
 
     @Mutation(() => RegisterUserResponse)
-    async register(@Args() userLogin: UserLogin) {
+    async register(@Args(() => UserLogin) userLogin: UserLogin) {
         return registerUserService(userLogin);
     }
 }

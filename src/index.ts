@@ -13,7 +13,7 @@ import {logger} from "./lib/logger";
 import {Context} from "./apollo/context";
 import {OSCContext} from "./apollo/types";
 
-function getApolloServer() {
+export function getApolloServer() {
     const schema = buildSchemaSync({
         resolvers: [
             CourseResolver,
