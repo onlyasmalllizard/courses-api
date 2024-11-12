@@ -1,5 +1,5 @@
-import {logger} from "../../../lib/logger";
-import {db} from "../../../lib/db";
+import {logger} from "src/lib/logger";
+import {db} from "src/lib/db";
 
 const log = logger.child({
     service: 'deleteCourseService'

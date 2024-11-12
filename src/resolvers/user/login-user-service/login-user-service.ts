@@ -1,5 +1,5 @@
 import {UserLogin} from "../types.input";
-import {logger} from "../../../lib/logger";
+import {logger} from "src/lib/logger";
 import {UserLoginResponse} from "../types";
 import {getUserFromDb} from "./get-user-from-db";
 import {verifyPasswordService} from "./verify-password-service";
@@ -18,7 +18,7 @@ export async function loginUserService({username, password}: UserLogin): Promise
         throw new Error('Password is incorrect');
     }
 
-    const jwtToken = generateJwtService(storedUser);
+    const jwtToken = await generateJwtService(storedUser);
 
     log.info('loginUserService - END');
 

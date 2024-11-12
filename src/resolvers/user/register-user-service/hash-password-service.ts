@@ -1,4 +1,4 @@
-import {logger} from "../../../lib/logger";
+import {logger} from "src/lib/logger";
 import bcrypt from "bcrypt";
 
 const log = logger.child({

@@ -1,4 +1,4 @@
-import {logger} from "../../../lib/logger";
+import {logger} from "src/lib/logger";
 import {UserLogin} from "../types.input";
 import * as jose from 'jose';
 

@@ -1,6 +1,6 @@
-import {logger} from "../../../lib/logger";
+import {logger} from "src/lib/logger";
 import {UserLogin} from "../types.input";
-import {db} from "../../../lib/db";
+import {db} from "src/lib/db";
 import {hashPasswordService} from "./hash-password-service";
 import {RegisterUserResponse} from "../types";
 

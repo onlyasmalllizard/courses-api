@@ -1,6 +1,6 @@
 import {GetCollectionByIdResponse, vwCoursesByCollectionItem} from "../types";
-import {logger} from "../../../lib/logger";
-import {db} from "../../../lib/db";
+import {logger} from "src/lib/logger";
+import {db} from "src/lib/db";
 import {mapDataToGraphql} from "./map-data-to-graphql";
 
 const log = logger.child({

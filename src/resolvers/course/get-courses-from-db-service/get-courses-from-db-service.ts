@@ -1,7 +1,7 @@
-import {db} from "../../../lib/db";
-import {logger} from "../../../lib/logger";
+import {db} from "src/lib/db";
+import {logger} from "src/lib/logger";
 import {selectColumns} from "../common/select-columns";
-import {SortOrder} from "../../../utils/enums/sort-order";
+import {SortOrder} from "src/utils/enums/sort-order";
 import {Course} from "../types";
 import {GetCoursesRequest} from "../types.input";
 

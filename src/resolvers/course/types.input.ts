@@ -1,5 +1,5 @@
 import {ArgsType, Field, InputType, Int} from "type-graphql";
-import {SortOrder} from "../../utils/enums/sort-order";
+import {SortOrder} from "src/utils/enums/sort-order";
 
 @InputType()
 export class AddCourseRequest {

@@ -1,6 +1,6 @@
 import {UpdateCourseRequest} from "../types.input";
-import {logger} from "../../../lib/logger";
-import {db} from "../../../lib/db";
+import {logger} from "src/lib/logger";
+import {db} from "src/lib/db";
 import {getCourseByIdService} from "../get-course-by-id-service/get-course-by-id-service";
 import {Course} from "../types";
 

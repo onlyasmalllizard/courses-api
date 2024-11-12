@@ -1,4 +1,4 @@
-import {db} from "../../../lib/db";
+import {db} from "src/lib/db";
 import {UserLogin} from "../types.input";
 
 export async function getUserFromDb(username: string): Promise<UserLogin> {
