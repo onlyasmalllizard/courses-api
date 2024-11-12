@@ -7,7 +7,7 @@
     "node": "22.x"
   },
   "scripts": {
-    "start": "npm run build && node dist/src/index.js",
+    "start": "node dist/src/index.js",
     "build": "npx swc src -d dist --config-file .swcrc",
     "dev": "concurrently --kill-others \"npm run dev:build\" \"npm run dev:watch\"",
     "dev:build": "npx swc src -d dist --config-file .swcrc --watch",
