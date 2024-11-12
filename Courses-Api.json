@@ -1,0 +1,375 @@
+{
+  "info": {
+    "name": "Courses-Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "Courses",
+      "item": [
+        {
+          "name": "GetCourses",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetCourses {\n  getCourses {\n    id\n    title\n    description\n    duration\n    outcome\n  }\n}",
+                "variables": "{\n  \"limit\": 2\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "AddCourse",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation AddCourse($collectionId: Int!, $course: AddCourseRequest!) {\n  addCourse(collectionId: $collectionId, course: $course) {\n    id\n    title\n    description\n    outcome\n    duration\n  }\n}",
+                "variables": "{\n  \"collectionId\": 1,\n  \"course\": {\n    \"title\": \"French\",\n    \"outcome\": \"At vero eos et accusamus et iusto odio \",\n    \"duration\": \"12 weeks\",\n    \"description\": \"At vero eos et accusamus et iusto odio \"\n  }\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "DeleteCourse",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation DeleteCourse($courseId: Int!) {\n  deleteCourse(courseId: $courseId) {\n    id\n  }\n}",
+                "variables": "{\n  \"courseId\": 11\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "UpdateCourse",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation UpdateCourse($course: UpdateCourseRequest!) {\n  updateCourse(course: $course) {\n    id\n    title\n    description\n    outcome\n    duration\n  }\n}",
+                "variables": "{\n  \"course\": {\n    \"id\": 10,\n    \"description\": \"Does anyone read these?\"\n  }\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "GetCourses - Limit",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetCourses($limit: Int) {\n  getCourses(limit: $limit) {\n    id\n    title\n    description\n    duration\n    outcome\n  }\n}",
+                "variables": "{\n  \"limit\": 2\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "GetCourses - Limit and Offset",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetCourses($limit: Int, $offset: Int) {\n  getCourses(limit: $limit, offset: $offset) {\n    id\n    title\n    description\n    duration\n    outcome\n  }\n}",
+                "variables": "{\n  \"limit\": 2,\n  \"offset\": 1\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "GetCourses - SortOrder",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetCourses($sortOrder: String) {\n  getCourses(sortOrder: $sortOrder) {\n    id\n    title\n    description\n    duration\n    outcome\n  }\n}",
+                "variables": "{\n  \"sortOrder\": \"ASC\"\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "GetCourseById",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query getCourseById($courseId: Int!) {\n  getCourseById(courseId: $courseId) {\n    id\n    title\n    outcome\n    description\n    duration\n  }\n}",
+                "variables": "{\n  \"courseId\": 2\n}"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Collections",
+      "item": [
+        {
+          "name": "GetCollections",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetCollections {\n  getCollections {\n    collections {\n      id\n      name\n    }\n  }\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "GetCollectionById",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetCollectionById($collectionId: Int!) {\n  getCollectionById(collectionId: $collectionId) {\n    collection {\n      id\n      name\n    }\n    courses {\n      id\n      title\n      description\n      outcome\n      duration\n    }\n  }\n}",
+                "variables": "{\n  \"collectionId\": 3\n}"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Register",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation Register($username: String!, $password: String!) {\n  register(username: $username, password: $password) {\n    username\n  }\n}",
+                "variables": "{\n  \"username\": \"test\",\n  \"password\": \"mypassword\"\n}"
+              }
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "https://courses-api-52052eb74b11.herokuapp.com/",
+              "protocol": "https",
+              "host": [
+                "courses-api-52052eb74b11",
+                "herokuapp",
+                "com/"
+              ],
+              "path": [],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query Login($username: String!, $password: String!) {\n  login(username: $username, password: $password) {\n    accessToken\n  }\n}",
+                "variables": "{\n  \"username\": \"test\",\n  \"password\": \"mypassword\"\n}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": []
+}

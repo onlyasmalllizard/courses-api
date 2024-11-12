@@ -2,6 +2,10 @@
 
 An API to handle information about courses.
 
+## Demo
+The `Courses-Api.json` file in this repo is a Postman collection set up to 
+make requests to the deployed version of this app.
+
 ## What I would have done with more time
 ### Finish authentication
 I set up the user resolver, but did not have time to implement the 
