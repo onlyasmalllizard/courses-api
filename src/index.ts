@@ -4,12 +4,14 @@ import {CourseResolver} from "./resolvers/course/course.resolver";
 import {ApolloServer} from "@apollo/server";
 import {startStandaloneServer} from "@apollo/server/standalone";
 import {CollectionResolver} from "./resolvers/collection/collection.resolver";
+import {UserResolver} from "./resolvers/user/user.resolver";
 
 async function bootstrap() {
     const schema = await buildSchema({
         resolvers: [
             CourseResolver,
-            CollectionResolver
+            CollectionResolver,
+            UserResolver
         ]
     });
 
